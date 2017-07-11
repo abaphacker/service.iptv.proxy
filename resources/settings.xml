@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<settings>
+  <category label="General">
+      <setting id="host" type="ipaddress" label="IP" default="127.0.0.1" />
+      <setting id="port" type="number" label="Port" default="9001" />
+      <setting id="playlist_path" type="folder" label="Pfad zur M3U Playliste" default="special://profile/" />
+  </category>
+  <category label="EWE TV">
+      <setting id="ewetv" type="bool" label="EWE TV" default="false" />
+      <setting id="user_ewe" type="text" label="Benutzername" default="" visible="!eq(-1,false)" />
+      <setting id="pass_ewe" type="text" option="hidden" label="Passwort" default="" visible="!eq(-2,false)" />
+  </category>
+    <category label="NetCologne NetTV">
+      <setting id="netcologne" type="bool" label="NetCologne NetTV Go" default="false" />
+      <setting id="user_nc" type="text" label="Benutzername" default="" visible="!eq(-1,false)" enable="!eq(-1,false)" />
+      <setting id="pass_nc" type="text" option="hidden" label="Passwort" default="" visible="!eq(-2,false)" enable="!eq(-2,false)" />
+  </category>
+  <category label="Zattoo">
+      <setting id="zattoo" type="bool" label="Zattoo" default="false" />
+      <setting id="user_zattoo" type="text" label="Benutzername" default="" visible="!eq(-1,false)" enable="!eq(-1,false)" />
+      <setting id="pass_zattoo" type="text" option="hidden" label="Passwort" default="" visible="!eq(-2,false)" enable="!eq(-2,false)" />
+  </category>
+  <category label="Weitere">
+      <setting id="m3u" type="bool" default="false" label="M3U Playliste hinzufügen" />
+      <setting id="m3u_path" type="file" label="Pfad zur M3U Playliste" mask="*.m3u" visible="!eq(-1,false)" enable="!eq(-1,false)" />
+  </category>
+</settings>

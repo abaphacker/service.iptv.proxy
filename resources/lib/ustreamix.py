@@ -24,8 +24,14 @@ class Zattoo(zapi.ZapiSession):
         return 'USTREAM URL'
 
     def getChannelList(self):
+        channel_list = { 'channel_groups': [ { 'channels' : [ ] }] } 
+        chanel = self.getChannelItem('RTL-2')
+        channel_list[ 'channel_groups'][0]['channels'].append(channel)
         return dict() #see channel_data in channellist.py
 
     def getLogoPath(self):
         return ''
 
+    def getChannelItem( self, name ):
+        chan = { 'cid': name ,'qualities' : [ { 'availability': 'available', 'title': name, 'logo_black_84': '' } ] }
+        return chan

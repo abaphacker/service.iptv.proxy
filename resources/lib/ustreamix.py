@@ -4,9 +4,9 @@ import zapisession as zapi
 class Zattoo(zapi.ZapiSession):
     def __init__(self):
         zapi.ZapiSession.__init__(self, '', '')
-#        self.baseUrl = 'https://zattoo.com'
-#        self.serviceName = 'Zattoo'
-#        self.serviceId = 'zattoo'
+        self.baseUrl = 'http://v2.ustreamix.?'
+        self.serviceName = 'Ustreamix'
+        self.serviceId = 'Ustreamix'
 
     def fetchAppToken(self):
         pass
@@ -25,7 +25,7 @@ class Zattoo(zapi.ZapiSession):
 
     def getChannelList(self):
         channel_list = { 'channel_groups': [ { 'channels' : [ ] }] } 
-        chanel = self.getChannelItem('RTL-2')
+        channel = self.getChannelItem('RTL-2')
         channel_list[ 'channel_groups'][0]['channels'].append(channel)
         return dict() #see channel_data in channellist.py
 

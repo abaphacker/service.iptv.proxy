@@ -9,7 +9,7 @@ path = addon.getSetting('playlist_path') + 'iptv_channels.m3u'
 
 def buildUrl(query):
     url = 'http://' + host + ':' + port + '/channel.m3u8?'
-    return url + urllib.urlencode(query)
+    return url + urllib.urlencode(query) + '|User-Agent=Chrome'
 
 def buildExtInfo(data, service_name=''):
     line = '#EXTINF:-1'

@@ -6,6 +6,8 @@ import urlparse
 import resources.lib.ewetv as ewetv
 import resources.lib.zattoo as zattoo
 import resources.lib.netcologne as netcologne
+import resources.lib.ustreamix as ustreamix
+
 import channellist
 
 addon = xbmcaddon.Addon()
@@ -48,6 +50,9 @@ if addon.getSetting('zattoo') == 'true':
     zattoo = zattoo.Zattoo(addon.getSetting('user_zattoo'), addon.getSetting('pass_zattoo'))
     if zattoo.login():
         tv_services.append(zattoo)
+
+us = ustreamix.Ustreamix()
+tv_services.append(us)
 
 if len(tv_services)>0:
     print tv_services    

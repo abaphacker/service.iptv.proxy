@@ -1,7 +1,8 @@
 # -*- coding: utf-8 -*-
 import zapisession as zapi
+import ustreamix_api as uapi
 
-class Zattoo(zapi.ZapiSession):
+class Ustreamix(zapi.ZapiSession):
     def __init__(self):
         zapi.ZapiSession.__init__(self, '', '')
         self.baseUrl = 'http://v2.ustreamix.?'
@@ -21,11 +22,11 @@ class Zattoo(zapi.ZapiSession):
         return True
 
     def getChannelUrl(self):
-        return 'USTREAM URL'
+        return uapi.getStream(self.current_channel_id)
 
     def getChannelList(self):
         channel_list = { 'channel_groups': [ { 'channels' : [ ] }] } 
-        channel = self.getChannelItem('RTL-2')
+        channel = self.getChannelItem('pro-7')
         channel_list[ 'channel_groups'][0]['channels'].append(channel)
         return dict() #see channel_data in channellist.py
 

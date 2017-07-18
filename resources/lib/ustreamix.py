@@ -22,13 +22,15 @@ class Ustreamix(zapi.ZapiSession):
         return True
 
     def getChannelUrl(self):
-        return uapi.getStream(self.current_channel_id)
+        return uapi.getStream(self.current_channel_id[0])
 
     def getChannelList(self):
         channel_list = { 'channel_groups': [ { 'channels' : [ ] }] } 
         channel = self.getChannelItem('pro-7')
         channel_list[ 'channel_groups'][0]['channels'].append(channel)
-        return dict() #see channel_data in channellist.py
+        channel = self.getChannelItem('rtl-de')
+        channel_list[ 'channel_groups'][0]['channels'].append(channel)
+        return channel_list #see channel_data in channellist.py
 
     def getLogoPath(self):
         return ''

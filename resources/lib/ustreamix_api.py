@@ -26,6 +26,7 @@ def getToken(ownIp, channel):
 
 
 def getStream(channel):
+    url = 'http://v2.ustreamix.com/stream.php?id=' + channel
     f = urllib2.urlopen('http://v2.ustreamix.com/stream.php?id=' + channel)
     txt = f.read()
 
